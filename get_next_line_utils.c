@@ -6,7 +6,13 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:41:21 by oelkhiar          #+#    #+#             */
-/*   Updated: 2022/12/11 18:41:22 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2022/12/12 18:21:45 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h";
+
+char	*get_next_line_utils(int fd)
+{
+    
+}
