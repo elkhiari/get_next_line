@@ -47,3 +47,24 @@ int main() {
 | fd1             | "file1.txt"|
 | fd2             | "file2.txt"|
 | fd3             | "file3.txt"|
+
+
+
+An **open file table**, shared between all processes. Each entry in this table contains, among other things, the access mode, an offset describing the current location within the file, and a pointer to the corresponding entry in the inode table. This table also keeps count of the number references there are to this file in all of the file descriptor tables of all processes. When a process closes the file, this reference count is decremented and if it gets to 0, the entry is deleted from the table.
+
+
+| Entry | File Path    | Access Mode | Offset | Reference Count |
+|-------|--------------|-------------|---------|---------------------|
+| 0     | example.txt | read/write  | 0         | 2                      |
+
+
+
+
+An **inode (index node) table** which is also shared between all processes. Each entry in the inode table describes the file in detail: the path to its location on the disk, its size, its permissions, etc.
+
+| Inode Number | File Path     | Permissions  | Owner  | Group   | Size     | Last Modified         |
+| ------------| ------------ | ------------ | ------ | ------- | --------| --------------------- |
+| 100         | file1.txt    | rw-r--r--    | user1  | group1  | 1024 KB | 2022-04-22 12:30:00   |
+| 101         | file2.txt    | rwxr-x---    | user2  | group2  | 512 KB  | 2022-04-21 10:45:00   |
+| 102         | directory1/  | rwxr-xr-x    | user1  | group1  | --      | 2022-04-22 13:00:00   |
+| 103         | file3.txt    | rw-------    | user3  | group3  | 2048 KB | 2022-04-20 08:15:00   |
