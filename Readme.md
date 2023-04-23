@@ -68,3 +68,8 @@ An **inode (index node) table** which is also shared between all processes. Each
 | 101         | file2.txt    | rwxr-x---    | user2  | group2  | 512 KB  | 2022-04-21 10:45:00   |
 | 102         | directory1/  | rwxr-xr-x    | user1  | group1  | --      | 2022-04-22 13:00:00   |
 | 103         | file3.txt    | rw-------    | user3  | group3  | 2048 KB | 2022-04-20 08:15:00   |
+
+
+<center>
+    <img src="https://www.codequoi.com/wp-content/uploads/2022/10/file_descriptors_en.drawio.png" />
+</center>
