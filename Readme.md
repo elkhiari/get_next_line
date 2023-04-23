@@ -1,6 +1,6 @@
 ## What is a File Descriptor?
-    file descriptor in C is a unique integer value that identifies an open file or I/O resource within a process.    
-    By default, each process systematically inherits three open file descriptors :
+file descriptor in C is a unique integer value that identifies an open file or I/O resource within a process.    
+By default, each process systematically inherits three open file descriptors :
 
 | File Descriptor | Name | <unistd.h> |	<stdio.h> |
 | --------------- | ---- | ---------- | --------- |
@@ -8,7 +8,7 @@
 | 1 | Standard Output | STDOUT_FILENO |	stdout |
 | 2 | Standard Error | STDERR_FILENO |	stderr |
 
-    But why use file descriptors as identifiers? An integer is much simpler to process for a computer than a long path string to a file. What’s more, the reference to a file must contain much more than its location: it must also include its permissions, access mode, size, etc… And wouldn’t it be wasteful to keep several entire references to the same file if several processes opened it?
+But why use file descriptors as identifiers? An integer is much simpler to process for a computer than a long path string to a file. What’s more, the reference to a file must contain much more than its location: it must also include its permissions, access mode, size, etc… And wouldn’t it be wasteful to keep several entire references to the same file if several processes opened it?
 
 **So how does the operating system maintain all of the information about every open file?**
 
