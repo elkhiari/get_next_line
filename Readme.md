@@ -1,4 +1,4 @@
-## What is a File Descriptor?
+### What is a File Descriptor?
 file descriptor in C is a unique integer value that identifies an open file or I/O resource within a process.    
 By default, each process systematically inherits three open file descriptors :
 
@@ -17,10 +17,11 @@ But why use file descriptors as identifiers? An integer is much simpler to proce
 To represent open files, the system uses three data structures:
 
 A **table of file descriptors** per process. Each process has its own table containing a series of indexes, each one referring to an entry in the open file table.
+```
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
-```
+
 int main() {
     int fd1, fd2, fd3;
 
@@ -73,3 +74,23 @@ An **inode (index node) table** which is also shared between all processes. Each
 <center>
     <img src="https://www.codequoi.com/wp-content/uploads/2022/10/file_descriptors_en.drawio.png" />
 </center>
+
+
+### Memory Layout in C
+
+* Variables declared without using malloc() are typically stored on the stack.
+* Variables allocated with malloc() are stored on the heap.
+* Static variables are stored in a special area of memory called the data segment, which is separate from both the stack and the heap. The data segment is a region of memory where initialized global and static variables are stored.
+* Global variables are also stored in the data segment.
+So in C, there are three main types of memory allocation:
+
+1. Stack allocation - used for local variables declared within functions
+2. Heap allocation - used for variables allocated with malloc() and other dynamic memory allocation functions
+3. Data segment allocation - used for static and global variables.
+
+The choice of memory allocation depends on the specific requirements of your program, and each type of allocation has its own advantages and disadvantages.
+
+
+The memory layout for C program can be shown below:
+
+<img src="https://static.javatpoint.com/cpages/images/memory-layout-in-c.png" />
