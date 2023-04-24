@@ -115,3 +115,19 @@ These are some of the main differences between stack allocation, heap allocation
 2. Data Segment: This area is used to store initialized global and static variables. It can be further divided into two sub-sections: read-only data section (contains constants) and read-write data section (contains global and static variables).
 3. Heap Segment: This area is used for dynamic memory allocation. It is used to store variables that are allocated at run-time using functions like malloc(), calloc(), and realloc(). The heap is managed by the programmer, who is responsible for allocating and freeing memory as needed.
 4. Stack Segment: This area is used for storing local variables and function call frames. It grows downward from higher memory addresses to lower memory addresses. When a function is called, a new stack frame is created and pushed onto the top of the stack. When the function returns, the stack frame is popped off the stack.
+
+# static variable
+
+A **static variable** in C is a variable that has a lifetime for the entire duration of a program's execution but has a limited scope within a specific function or file. It can be declared with the static keyword before the variable name.
+
+**The syntax for declaring a static variable in C is as follows:**
+
+
+```
+static <data_type> <variable_name> = <initial_value>;
+```
+
+**The area allocated for a static variable**
+
++ If a static variable is declared inside a function, it is allocated in the program's data segment.
++ If a static variable is declared outside of any function (at file scope), it is also allocated in the program's data segment.
