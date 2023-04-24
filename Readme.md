@@ -1,4 +1,4 @@
-### What is a File Descriptor?
+# What is a File Descriptor?
 file descriptor in C is a unique integer value that identifies an open file or I/O resource within a process.    
 By default, each process systematically inherits three open file descriptors :
 
@@ -76,7 +76,7 @@ An **inode (index node) table** which is also shared between all processes. Each
 </center>
 
 
-### Memory Layout in C
+# Memory Layout in C
 
 * Variables declared without using malloc() are typically stored on the stack.
 * Variables allocated with malloc() are stored on the heap.
@@ -94,3 +94,24 @@ The choice of memory allocation depends on the specific requirements of your pro
 The memory layout for C program can be shown below:
 
 <img src="https://static.javatpoint.com/cpages/images/memory-layout-in-c.png" />
+
+
+## There are several differences between stack allocation, heap allocation, and data segment allocation:
+
+* Lifetime: Variables allocated on the stack have a lifetime that is limited to the scope in which they are declared. When the function in which they are declared returns, the stack frame is destroyed and the memory used by those variables is reclaimed. Variables allocated on the heap, on the other hand, have a lifetime that persists beyond the function in which they are declared, until they are explicitly deallocated using free(). Static and global variables have a lifetime that persists throughout the entire execution of the program.
+
+* Size: The amount of memory available for stack allocation is limited, typically to a few megabytes. Heap allocation, on the other hand, can allocate a much larger amount of memory, limited only by the amount of available system memory. Data segment allocation is typically limited by the size of the data segment, which is fixed at compile time.
+
+* Access: Stack-allocated variables can be accessed faster than heap-allocated variables because stack access involves simply changing the value of the stack pointer. Heap-allocated variables, on the other hand, require the use of pointers to access the memory they occupy. Static and global variables can be accessed in a similar manner to stack-allocated variables, but they may be located further away from the stack, which could impact performance.
+
+* Allocation and deallocation: Stack allocation and deallocation are managed automatically by the compiler and the operating system. Heap allocation and deallocation, on the other hand, are managed explicitly by the programmer using functions such as malloc() and free(). Static and global variables are allocated at program startup and deallocated at program shutdown.
+
+* Fragmentation: Heap allocation can suffer from memory fragmentation, where free memory is split into small blocks, making it difficult to allocate larger blocks. Stack allocation does not suffer from this problem, as it only allocates contiguous blocks of memory. Data segment allocation does not suffer from fragmentation either, as the size of the data segment is fixed at compile time.
+
+These are some of the main differences between stack allocation, heap allocation, and data segment allocation. The choice of allocation method depends on the specific requirements of the program and the type of data being stored.
+
+
+1. Text Segment or Code Segment: This is where the compiled program code is stored. It is read-only and typically contains the machine code instructions for the executable program.
+2. Data Segment: This area is used to store initialized global and static variables. It can be further divided into two sub-sections: read-only data section (contains constants) and read-write data section (contains global and static variables).
+3. Heap Segment: This area is used for dynamic memory allocation. It is used to store variables that are allocated at run-time using functions like malloc(), calloc(), and realloc(). The heap is managed by the programmer, who is responsible for allocating and freeing memory as needed.
+4. Stack Segment: This area is used for storing local variables and function call frames. It grows downward from higher memory addresses to lower memory addresses. When a function is called, a new stack frame is created and pushed onto the top of the stack. When the function returns, the stack frame is popped off the stack.
