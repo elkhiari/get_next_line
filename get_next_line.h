@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:35:57 by oelkhiar          #+#    #+#             */
-/*   Updated: 2023/04/23 14:23:05 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:40:23 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <fcntl.h>
 # include <limits.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	6
+#  define BUFFER_SIZE	42
 # endif
 
-char	*get_next_line(int fd);
-// char	*get_after_newline(char *stock);
 int ft_lennewline(char *str);
+char    *get_next_line(int fd);
+char	*get_after_newline(char *stock);
 
 int		ft_strchr( char *str, char c);
 char	*ft_substr(char *s, unsigned int start, size_t len);
