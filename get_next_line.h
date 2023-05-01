@@ -6,7 +6,7 @@
 /*   By: oelkhiar <oelkhiar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 18:35:57 by oelkhiar          #+#    #+#             */
-/*   Updated: 2023/04/25 14:40:23 by oelkhiar         ###   ########.fr       */
+/*   Updated: 2023/05/01 14:44:12 by oelkhiar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 #  define BUFFER_SIZE	42
 # endif
 
-int ft_lennewline(char *str);
-char    *get_next_line(int fd);
-char	*get_after_newline(char *stock);
-
+int		ft_lennewline(char *str);
+char	*get_next_line(int fd);
+char	*get_stock_newline(char *stock);
 int		ft_strchr( char *str, char c);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
